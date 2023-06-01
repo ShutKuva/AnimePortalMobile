@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AnimePortalMobile.Views.CatalogView"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{StaticResource BACKGROUND_DARK}">
+    <ContentPage.Content>
+        <StackLayout Padding="15">
+            <CollectionView ItemsSource="{Binding AnimePreviews}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Margin="10">
+                            <Frame Padding="20" CornerRadius="30" BackgroundColor="{StaticResource GREY_900}">
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="{Binding Poster}"></Image>
+                                    <StackLayout VerticalOptions="Center">
+                                        <Label Text="{Binding Studio}" TextColor="{StaticResource BACKGROUND_LIGHT}"></Label>
+                                        <Label Text="{Binding AnimeDescription.Title}" TextColor="{StaticResource BACKGROUND_LIGHT}"></Label>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

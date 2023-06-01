@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AnimePortalMobile.Views.LoginView"
+             xmlns:custom="clr-namespace:AnimePortalMobile.CustomElements;assembly=AnimePortalMobile"
+             NavigationPage.HasNavigationBar="False"
+             >
+    <ContentPage.Style>
+        <Style TargetType="ContentPage">
+            <Setter Property="BackgroundColor" Value="{StaticResource BACKGROUND_DARK}"></Setter>
+        </Style>
+    </ContentPage.Style>
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" Padding="20">
+            <custom:RoundedEntry
+                CornerRadius="30"
+                Padding="60,45"
+                BackgroundColor="{StaticResource BACKGROUND_LIGHT}"
+                x:Name="Login"
+                Placeholder="Login"
+                Text="{Binding Login}"
+                />
+            <custom:RoundedEntry 
+                CornerRadius="30" 
+                Padding="60,45"
+                BackgroundColor="{StaticResource BACKGROUND_LIGHT}"
+                x:Name="Password"
+                Placeholder="Password"
+                Text="{Binding Password}"
+                IsPassword="True"
+                />
+            <Button 
+                Text="Login" 
+                CornerRadius="10"
+                BackgroundColor="{StaticResource LIGHT_GREEN}"
+                TextColor="{StaticResource BACKGROUND_LIGHT}"
+                Command="{Binding LogIn}"
+                />
+            <Button 
+                Text="Create new account"
+                BackgroundColor="Transparent"
+                TextColor="{StaticResource BACKGROUND_LIGHT}"
+                Command="{Binding RedirectTo}"
+                CommandParameter="1"
+            />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
