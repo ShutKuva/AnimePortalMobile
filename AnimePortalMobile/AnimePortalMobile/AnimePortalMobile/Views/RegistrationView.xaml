@@ -34,6 +34,7 @@
                 Text="{Binding Password}"
                 x:Name="Password"
                 Placeholder="Password"
+                IsPassword="True"
                 />
             <Button 
                 Text="Register" 

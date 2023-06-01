@@ -43,6 +43,8 @@
                 Command="{Binding RedirectTo}"
                 CommandParameter="1"
             />
+
+            <Label Text="{Binding Error}" HorizontalOptions="Center" TextColor="{StaticResource BACKGROUND_LIGHT}"></Label>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

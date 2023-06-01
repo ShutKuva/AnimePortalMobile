@@ -6,6 +6,15 @@
              BackgroundColor="{StaticResource BACKGROUND_DARK}">
     <ContentPage.Content>
         <StackLayout Padding="15">
+            <Button 
+                Text="Back to login" 
+                CornerRadius="10"
+                BackgroundColor="{StaticResource LIGHT_GREEN}"
+                TextColor="{StaticResource BACKGROUND_LIGHT}"
+                Command="{Binding RedirectTo}"
+                CommandParameter="0"
+                HorizontalOptions="End"
+            />
             <CollectionView ItemsSource="{Binding AnimePreviews}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>

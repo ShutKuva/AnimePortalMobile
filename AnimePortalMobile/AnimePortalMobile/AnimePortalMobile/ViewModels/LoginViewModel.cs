@@ -6,12 +6,18 @@ using AnimePortalMobile.Constants;
 using AnimePortalMobile.Models.DTOs.Jwt;
 using BLL.ApiClient;
 using Xamarin.CommunityToolkit.ObjectModel;
-using Xamarin.Essentials;
 
 namespace AnimePortalMobile.ViewModels
 {
     public class LoginViewModel : BaseViewModel
     {
+        private string _error;
+        public string Error
+        {
+            get => _error;
+            set => SetField(ref _error, value);
+        }
+
         private string _login;
         public string Login
         {
@@ -48,7 +54,12 @@ namespace AnimePortalMobile.ViewModels
 
             if (token != null)
             {
+                Error = "";
                 await RedirectToMethodAsync("2");
+            }
+            else
+            {
+                Error = "Error";
             }
         }
     }

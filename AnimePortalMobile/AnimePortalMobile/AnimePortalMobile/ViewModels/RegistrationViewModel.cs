@@ -13,6 +13,13 @@ namespace AnimePortalMobile.ViewModels
 {
     public class RegistrationViewModel : BaseViewModel
     {
+        private string _error;
+        public string Error
+        {
+            get => _error;
+            set => SetField(ref _error, value);
+        }
+
         private string _login;
         public string Login
         {
@@ -57,6 +64,10 @@ namespace AnimePortalMobile.ViewModels
             if (token != null)
             {
                 await RedirectToMethodAsync("2");
+            }
+            else
+            {
+                Error = "Error";
             }
         }
     }
